@@ -32,12 +32,13 @@ def listen():
 	time_stamp = time.time()
 	while True:
 		data, address = udp_sock.recvfrom(UDP_PORT)
-		message = ""
+		print(data)
+		message = {}
 		try:
 			message = json.loads(data)
 		except:
 			pass
-		if message != "" and message['version'] == PROTO_VERSION and message['type'] == 'wake':
+		if message != {} and message['version'] == PROTO_VERSION and message['type'] == 'wake':
 			time_stamp = time.time()
 		if time.time() - time_stamp < screen_timeout:
 			toggleScreen(True)

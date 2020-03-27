@@ -32,6 +32,7 @@ def listen():
 	time_stamp = time.time()
 	while True:
 		data, address = udp_sock.recvfrom(UDP_PORT)
+		message = ""
 		try:
 			message = json.loads(data)
 		except:

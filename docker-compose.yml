@@ -4,6 +4,7 @@ services:
     app:
       build: .
       ports:
-      - "65282:65282"
+      - "65282:65282/udp"
       volumes:
       - "/sys/class/backlight/rpi_backlight/:/sys/class/backlight/rpi_backlight/"
+      privileged: true

@@ -1,0 +1,9 @@
+version: '2.0'
+
+services:
+    app:
+      build: .
+      ports:
+      - "65282:65282"
+      volumes:
+      - "/sys/class/backlight/rpi_backlight/:/sys/class/backlight/rpi_backlight/"

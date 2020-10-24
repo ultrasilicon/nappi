@@ -3,7 +3,8 @@ version: '2.0'
 services:
     app:
       build: .
-      network: host
+      network_mode: host
+      restart: always
       ports:
       - "65282:65282/udp"
       volumes:
